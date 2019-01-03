@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +10,19 @@ import { DataService } from '../data.service';
 export class HomeComponent implements OnInit {
 
   users: Object;
-  constructor(private data: DataService) { }
+  id = 1;
+  constructor(private data: DataService, private router: Router) { }
 
   ngOnInit() {
     this.data.getUsers().subscribe(d => {
       this.users = d;
       console.log(this.users);
     });
+  }
 
+  onSelect(id) {
+    this.id = id + 1;
+    this.router.navigate(['users', this.id]);
   }
 
 }

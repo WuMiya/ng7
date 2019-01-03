@@ -1,7 +1,11 @@
 <h1>Users</h1>
 <ul *ngIf="users">
-  <li *ngFor="let u of users.data">
-    <img [src]="u.avatar">
-    <p>{{u.first_name}} {{u.last_name}}</p>
+  <li (click)="onSelect(id)" *ngFor="let u of users.results; let id = index">
+    <img [src]="u.picture.large">
+      <p>
+        {{id+1}}. {{u.name.title.substring(0,1).toUpperCase()+u.name.title.substring(1)}} 
+        {{u.name.first}} {{u.name.last}}
+      </p>
   </li>
 </ul>
+
