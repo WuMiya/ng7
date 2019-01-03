@@ -1,0 +1,9 @@
+<h1>Contact us</h1>
+<form [formGroup]="messageFrom" (ngSubmit)="onSubmit()">
+  <h5>You from is invalid!</h5>
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+
+  </label>
+</form>
