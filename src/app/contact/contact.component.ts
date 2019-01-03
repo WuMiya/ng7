@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -9,8 +9,8 @@ import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 export class ContactComponent implements OnInit {
 
   messageForm: FormGroup;
-  submitted: boolean = false;
-  success: boolean = false;
+  submitted = false;
+  success = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -21,10 +21,10 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  onSubmit(){
+  onSubmit() {
     this.submitted = true;
 
-    if(this.messageForm.invalid) {
+    if (this.messageForm.invalid) {
       return;
     }
 
@@ -32,3 +32,4 @@ export class ContactComponent implements OnInit {
   }
 
 }
+

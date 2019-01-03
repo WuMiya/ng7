@@ -12,10 +12,10 @@ export class HomeComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.data.getUsers().subscribe(d=> {
-      this.users = d
+    this.data.getUsers().subscribe(d => {
+      this.users = d;
       console.log(this.users);
-    })
+    });
 
   }
 
